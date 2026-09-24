@@ -7,60 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Extra styling for YouTube thumbnail cards with play button overlay */
-        .video-thumb-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            background: #000;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .video-thumb-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .video-thumb-container:hover img {
-            transform: scale(1.05);
-        }
-        .play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            transition: background 0.3s ease;
-        }
-        .video-thumb-container:hover .play-overlay {
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            background: #ff0000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 22px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease;
-        }
-        .video-thumb-container:hover .play-btn {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 <body>
 
@@ -122,7 +68,7 @@
         </div>
     </section>
 
-    <!-- SEPARATE VIDEOS SECTION (Using YouTube Thumbnails) -->
+    <!-- SEPARATE VIDEOS SECTION -->
     <section id="videos-section" class="portfolio-section">
         <h2>My Video Works</h2>
         <p class="section-desc">Dynamic motion graphics, VFX, and video editing reels.</p>
@@ -130,131 +76,81 @@
         <div class="media-grid">
             <!-- Video 1 -->
             <div class="media-card">
-                <a href="https://youtu.be/2YUS3Xsbg5M" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/2YUS3Xsbg5M/hqdefault.jpg" alt="2D CHARACTER WALK CYCLE">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/2YUS3Xsbg5M" title="2D CHARACTER WALK CYCLE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">2D CHARACTER WALK CYCLE</h3>
             </div>
 
             <!-- Video 2 -->
             <div class="media-card">
-                <a href="https://youtu.be/pQK1MZ1eOPQ" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/pQK1MZ1eOPQ/hqdefault.jpg" alt="3D CAMERA TRACKING">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/pQK1MZ1eOPQ" title="3D CAMERA TRACKING" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">3D CAMERA TRACKING</h3>
             </div>
 
             <!-- Video 3 -->
             <div class="media-card">
-                <a href="https://youtu.be/z-162UFYRTc" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/z-162UFYRTc/hqdefault.jpg" alt="ELEMENT 3D TITLE">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/z-162UFYRTc" title="ELEMENT 3D TITLE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">ELEMENT 3D TITLE</h3>
             </div>
 
             <!-- Video 4 -->
             <div class="media-card">
-                <a href="https://youtu.be/Rw_Crwn5CzI" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/Rw_Crwn5CzI/hqdefault.jpg" alt="LYRICAL SONG">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/Rw_Crwn5CzI" title="LYRICAL SONG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">LYRICAL SONG</h3>
             </div>
 
             <!-- Video 5 -->
             <div class="media-card">
-                <a href="https://youtu.be/AQCgf95VOcA" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/AQCgf95VOcA/hqdefault.jpg" alt="2D CHARACTER ADD">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/AQCgf95VOcA" title="2D CHARACTER ADD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">2D CHARACTER ADD</h3>
             </div>
 
             <!-- Video 6 -->
             <div class="media-card">
-                <a href="https://youtu.be/-cY88-g8ya4" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/-cY88-g8ya4/hqdefault.jpg" alt="SAAS ADD">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/-cY88-g8ya4" title="SAAS ADD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">SAAS ADD</h3>
             </div>
 
             <!-- Video 7 -->
             <div class="media-card">
-                <a href="https://youtu.be/7xOcIE0D5fI" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/7xOcIE0D5fI/hqdefault.jpg" alt="CALLOUT BOXES">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/7xOcIE0D5fI" title="CALLOUT BOXES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">CALLOUT BOXES</h3>
             </div>
 
             <!-- Video 8 -->
             <div class="media-card">
-                <a href="https://youtu.be/vfq4i_eV-mo" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/vfq4i_eV-mo/hqdefault.jpg" alt="GREEN SCREEN MOBILE">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/vfq4i_eV-mo" title="GREEN SCREEN MOBILE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">GREEN SCREEN MOBILE</h3>
             </div>
 
             <!-- Video 9 -->
             <div class="media-card">
-                <a href="https://youtu.be/hWJ_Ui1nCS4" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/hWJ_Ui1nCS4/hqdefault.jpg" alt="NAME PLATE TRACKING">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/hWJ_Ui1nCS4" title="NAME PLATE TRACKING" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">NAME PLATE TRACKING</h3>
             </div>
 
             <!-- Video 10 -->
             <div class="media-card">
-                <a href="https://youtube.com/shorts/IeqJDUAvIt0?feature=share" target="_blank">
-                    <div class="video-thumb-container">
-                        <img src="https://img.youtube.com/vi/IeqJDUAvIt0/hqdefault.jpg" alt="PODCAST">
-                        <div class="play-overlay">
-                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                    </div>
-                </a>
+                <div class="media-box">
+                    <iframe src="https://www.youtube.com/embed/IeqJDUAvIt0" title="PODCAST" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <h3 class="project-title">PODCAST</h3>
             </div>
         </div>
@@ -266,7 +162,7 @@
         <p class="section-desc">Custom channel art and YouTube banner designs.</p>
         
         <div class="media-grid">
-            <!-- Cover 1 -->
+            <!-- Cover 1 (Replace 'images/youtube-cover-1.jpg' with your actual cover image filename) -->
             <div class="media-card">
                 <div class="media-box">
                     <img src="images/youtube-cover-1.jpg" alt="YouTube Banner 1">
