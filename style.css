@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(-45deg, #0f1016, #1e293b, #090a0f, #111827);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #f1f5f9;
+    line-height: 1.6;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(15, 16, 22, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #38bdf8;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 8% 60px;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f1016 70%);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-content {
+    text-align: center;
+    width: 100%;
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Hero Image with Glowing Animation */
+.hero-image img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    display: block;
+    margin: 0 auto;
+    animation: floatAndGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatAndGlow {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), inset 0 0 25px rgba(56, 189, 248, 0.4);
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+}
+
+.hero-content .tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.highlight {
+    color: #38bdf8;
+}
+
+.hero-buttons .btn {
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.btn.primary {
+    background: #38bdf8;
+    color: #0f1016;
+}
+
+.btn.secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f1f5f9;
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+section {
+    padding: 80px 4% 60px;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #38bdf8;
+    color: #0f1016;
+}
+
+/* Portfolio & Separate Sections Layout (Chinna Cards Pakka-Pakkaga Ravataniki) */
+.portfolio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.section-desc {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* Ikkada grid columns ni chinna size (220px) lo set chesam, so row ki 3 or 4 ostayi */
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.portfolio-item {
+    width: 240px !important;
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Videos: Strict 16:9 Ratio */
+.portfolio-item.video .media-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+/* Designs: Strict Height limit so images won't stretch full screen */
+.portfolio-item.design .media-box {
+    width: 50%;
+    height: 50px; /* Ikkada height 160px fix chesam, anduke chinna ga vastundi */
+    background: #000;
+}
+
+.media-box img, .media-box video {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-title {
+    padding: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    text-align: center;
+    background: #1e293b;
+}
+
+/* Contact & Footer */
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: #94a3b8;
+}
+
+.contact-info i {
+    color: #38bdf8;
+    margin-right: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #090a0f;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+    .hero-container {
+        text-align: center;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+/* 1. Smooth Fade-In Animation for Cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolio-item {
+    animation: fadeInUp 0.6s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 2. Hover Effect: Card Lift & Glow */
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* 3. Image Zoom Effect on Hover inside Cards */
+.media-box img, .media-box video {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .media-box img, 
+.portfolio-item:hover .media-box video {
+    transform: scale(1.05);
+}
+
+/* 4. Button Glow & Scale Animation */
+.btn.primary {
+    transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* 5. Filter Buttons Smooth Transition */
+.filter-btn {
+    transition: all 0.3s ease;
+}

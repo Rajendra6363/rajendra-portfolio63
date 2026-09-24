@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajendra | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Extra styling for YouTube thumbnail cards with play button overlay */
+        .video-thumb-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .video-thumb-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .video-thumb-container:hover img {
+            transform: scale(1.05);
+        }
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+        .video-thumb-container:hover .play-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+        .video-thumb-container:hover .play-btn {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">RAJENDRA EDITOR</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#videos-section">Videos</a>
+            <a href="#images-section">Designs</a>
+            <a href="#contact" class="cta-btn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section (Hero / Intro) -->
+    <section id="about" class="about">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="images/raj logo.png" alt="Rajendra Editor">
+            </div>
+            <div class="hero-content">
+                <span class="tag">Graphic Designer & Video Editor</span>
+                <h1>Hi, I'm <span class="highlight">Rajendra</span></h1>
+                <p>I'm <strong>Mallavalli Dola Rajendra</strong>, a creative and detail-oriented Graphic Designer and Video Editor based in Vijayawada. I specialize in branding, photo retouching, vector artwork, and dynamic video edits using Adobe Photoshop, Illustrator, Premiere Pro, and After Effects.</p>
+                <div class="hero-buttons">
+                    <a href="#videos-section" class="btn primary">View Works</a>
+                    <a href="#contact" class="btn secondary">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Software & Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="images/adobe-illustrator-icon.png" alt="Adobe Illustrator">
+                <h3>Adobe Illustrator</h3>
+                <p>Vector Artwork & Logos</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/adobe-photoshop-icon.png" alt="Adobe Photoshop">
+                <h3>Adobe Photoshop</h3>
+                <p>Retouching & Compositing</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/adobe-after-effects-icon.png" alt="After Effects">
+                <h3>After Effects</h3>
+                <p>VFX & Motion Graphics</p>
+            </div>
+            <div class="skill-card">
+                <img src="images/adobe-premiere-pro-icon.png" alt="Premiere Pro">
+                <h3>Premiere Pro</h3>
+                <p>Video Editing & Color Grading</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPARATE VIDEOS SECTION (Using YouTube Thumbnails) -->
+    <section id="videos-section" class="portfolio-section">
+        <h2>My Video Works</h2>
+        <p class="section-desc">Dynamic motion graphics, VFX, and video editing reels.</p>
+        
+        <div class="media-grid">
+            <!-- Video 1 -->
+            <div class="media-card">
+                <a href="https://youtu.be/2YUS3Xsbg5M" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/2YUS3Xsbg5M/hqdefault.jpg" alt="2D CHARACTER WALK CYCLE">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">2D CHARACTER WALK CYCLE</h3>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="media-card">
+                <a href="https://youtu.be/pQK1MZ1eOPQ" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/pQK1MZ1eOPQ/hqdefault.jpg" alt="3D CAMERA TRACKING">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">3D CAMERA TRACKING</h3>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="media-card">
+                <a href="https://youtu.be/z-162UFYRTc" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/z-162UFYRTc/hqdefault.jpg" alt="ELEMENT 3D TITLE">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">ELEMENT 3D TITLE</h3>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="media-card">
+                <a href="https://youtu.be/Rw_Crwn5CzI" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/Rw_Crwn5CzI/hqdefault.jpg" alt="LYRICAL SONG">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">LYRICAL SONG</h3>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="media-card">
+                <a href="https://youtu.be/AQCgf95VOcA" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/AQCgf95VOcA/hqdefault.jpg" alt="2D CHARACTER ADD">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">2D CHARACTER ADD</h3>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="media-card">
+                <a href="https://youtu.be/-cY88-g8ya4" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/-cY88-g8ya4/hqdefault.jpg" alt="SAAS ADD">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">SAAS ADD</h3>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="media-card">
+                <a href="https://youtu.be/7xOcIE0D5fI" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/7xOcIE0D5fI/hqdefault.jpg" alt="CALLOUT BOXES">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">CALLOUT BOXES</h3>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="media-card">
+                <a href="https://youtu.be/vfq4i_eV-mo" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/vfq4i_eV-mo/hqdefault.jpg" alt="GREEN SCREEN MOBILE">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">GREEN SCREEN MOBILE</h3>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="media-card">
+                <a href="https://youtu.be/hWJ_Ui1nCS4" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/hWJ_Ui1nCS4/hqdefault.jpg" alt="NAME PLATE TRACKING">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">NAME PLATE TRACKING</h3>
+            </div>
+
+            <!-- Video 10 -->
+            <div class="media-card">
+                <a href="https://youtube.com/shorts/IeqJDUAvIt0?feature=share" target="_blank">
+                    <div class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/IeqJDUAvIt0/hqdefault.jpg" alt="PODCAST">
+                        <div class="play-overlay">
+                            <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                    </div>
+                </a>
+                <h3 class="project-title">PODCAST</h3>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- SEPARATE IMAGES / DESIGNS SECTION -->
+    <section id="images-section" class="portfolio-section">
+        <h2>My Design Works</h2>
+        <p class="section-desc">Vector branding, social media posts, and creative posters.</p>
+        
+        <div class="media-grid">
+            <!-- Design 1 -->
+            <div class="media-card">
+                <div class="media-box">
+                    <img src="images/Untitled-1.jpg" alt="Vector Brand Identity">
+                </div>
+                <h3 class="project-title">Vector Brand Identity & Logo</h3>
+            </div>
+
+            <!-- Design 2 -->
+            <div class="media-card">
+                <div class="media-box">
+                    <img src="images/social media post 2.jpg" alt="Social Media Post">
+                </div>
+                <h3 class="project-title">Social Media Post Design</h3>
+            </div>
+
+            <!-- Design 3 -->
+            <div class="media-card">
+                <div class="media-box">
+                    <img src="images/ganesh festival.jpg" alt="Festival Banner">
+                </div>
+                <h3 class="project-title">Festival Banner Design</h3>
+            </div>
+
+            <!-- Design 4 -->
+            <div class="media-card">
+                <div class="media-box">
+                    <img src="images/line ART.jpg" alt="Line Art">
+                </div>
+                <h3 class="project-title">Line Art</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>Want to work together or collaborate? Reach out to me directly!</p>
+        <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> dolarajendra49@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 9493762864</p>
+            <p><i class="fa-solid fa-location-dot"></i> Vijayawada, Andhra Pradesh</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Rajendra. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
