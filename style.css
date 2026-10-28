@@ -355,45 +355,53 @@ section h2 {
 }
 
 /* =========================
-   DESIGN WORKS
-   ORIGINAL IMAGE PROPORTIONS
+   DESIGN WORKS - NATURAL IMAGE SIZE
+   VIDEOS WILL NOT CHANGE
 ========================= */
 
 #images-section .media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     gap: 25px;
-    align-items: start;
 }
 
 #images-section .media-card {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
-    align-self: start;
+    flex: 0 1 auto;
     overflow: hidden;
+    background: #1e293b;
+    border-radius: 10px;
 }
 
 #images-section .media-box {
-    width: 100%;
+    width: auto;
     height: auto;
     aspect-ratio: auto;
-    background: transparent;
     overflow: hidden;
+    background: transparent;
 }
-
-/* ORIGINAL IMAGE SIZE / RATIO */
 
 #images-section .media-box img {
     display: block;
-    width: 100%;
+    width: auto;
     height: auto;
     max-width: 100%;
-    aspect-ratio: auto;
+    max-height: 350px;
     object-fit: contain;
+    aspect-ratio: auto;
     transition: transform 0.5s ease;
 }
 
-/* DESIGN IMAGE HOVER */
+#images-section .project-title {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background: #1e293b;
+}
 
 #images-section .media-card:hover img {
     transform: scale(1.03);
@@ -414,12 +422,6 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#images-section .project-title {
-    padding: 12px;
-    text-align: center;
-    background: #1e293b;
 }
 
 /* =========================
@@ -520,8 +522,7 @@ footer {
 
 @media (max-width: 900px) {
 
-    .media-grid,
-    #images-section .media-grid {
+    .media-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -578,8 +579,7 @@ footer {
         font-size: 2rem;
     }
 
-    .media-grid,
-    #images-section .media-grid {
+    .media-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -605,6 +605,22 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+    }
+
+    /* DESIGN IMAGES MOBILE */
+
+    #images-section .media-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #images-section .media-card {
+        max-width: 100%;
+    }
+
+    #images-section .media-box img {
+        max-width: 100%;
+        max-height: none;
     }
 }
 
