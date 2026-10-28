@@ -1,4 +1,8 @@
 
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +12,13 @@
 }
 
 body {
-    background: linear-gradient(-45deg, #0f1016, #1e293b, #090a0f, #111827);
+    background: linear-gradient(
+        -45deg,
+        #0f1016,
+        #1e293b,
+        #090a0f,
+        #111827
+    );
     background-size: 400% 400%;
     animation: gradientBG 12s ease infinite;
     color: #f1f5f9;
@@ -19,15 +29,19 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
-/* HEADER */
+/* =========================
+   HEADER / NAVBAR
+========================= */
 
 header {
     display: flex;
@@ -60,7 +74,9 @@ nav a:hover {
     color: #38bdf8;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO / ABOUT SECTION
+========================= */
 
 .hero,
 .about {
@@ -69,7 +85,11 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     padding: 120px 8% 60px;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f1016 70%);
+    background: radial-gradient(
+        circle at center,
+        #1e293b 0%,
+        #0f1016 70%
+    );
 }
 
 .hero-container {
@@ -99,6 +119,13 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+.about p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: #94a3b8;
+}
+
 /* HERO IMAGE */
 
 .hero-image img {
@@ -114,7 +141,7 @@ nav a:hover {
 
 @keyframes floatAndGlow {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0);
         box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
     }
 
@@ -124,7 +151,7 @@ nav a:hover {
     }
 
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
         box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
     }
 }
@@ -149,7 +176,9 @@ nav a:hover {
     color: #38bdf8;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .hero-buttons .btn {
     padding: 12px 25px;
@@ -176,7 +205,9 @@ nav a:hover {
     color: #f1f5f9;
 }
 
-/* SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section {
     padding: 80px 4% 60px;
@@ -189,14 +220,9 @@ section h2 {
     text-align: center;
 }
 
-.about p {
-    max-width: 700px;
-    margin: 0 auto 30px;
-    text-align: center;
-    color: #94a3b8;
-}
-
-/* SKILLS */
+/* =========================
+   SOFTWARE & SKILLS
+========================= */
 
 .skills-grid {
     display: grid;
@@ -227,7 +253,9 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* FILTER BUTTONS */
+/* =========================
+   FILTER BUTTONS
+========================= */
 
 .filter-buttons {
     display: flex;
@@ -254,7 +282,9 @@ section h2 {
     color: #0f1016;
 }
 
-/* PORTFOLIO SECTION */
+/* =========================
+   PORTFOLIO SECTION
+========================= */
 
 .portfolio-section {
     max-width: 1200px;
@@ -269,7 +299,9 @@ section h2 {
     font-size: 0.95rem;
 }
 
-/* MAIN MEDIA GRID - FIXED */
+/* =========================
+   MEDIA GRID
+========================= */
 
 .media-grid {
     display: grid;
@@ -279,7 +311,9 @@ section h2 {
     align-items: start;
 }
 
-/* VIDEO AND DESIGN CARDS */
+/* =========================
+   MEDIA CARDS
+========================= */
 
 .media-card,
 .portfolio-item {
@@ -290,7 +324,8 @@ section h2 {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     animation: fadeInUp 0.6s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .media-card:hover,
@@ -300,7 +335,10 @@ section h2 {
     border-color: rgba(56, 189, 248, 0.4);
 }
 
-/* VIDEO BOX - 16:9 */
+/* =========================
+   VIDEO WORKS
+   KEEP SAME SIZE & LAYOUT
+========================= */
 
 #videos-section .media-box {
     width: 100%;
@@ -309,8 +347,6 @@ section h2 {
     overflow: hidden;
 }
 
-/* YOUTUBE VIDEO FIX */
-
 #videos-section .media-box iframe {
     display: block;
     width: 100%;
@@ -318,28 +354,54 @@ section h2 {
     border: none;
 }
 
-/* DESIGN IMAGES */
+/* =========================
+   DESIGN WORKS
+   ORIGINAL IMAGE PROPORTIONS
+========================= */
+
+#images-section .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+#images-section .media-card {
+    width: 100%;
+    height: auto;
+    align-self: start;
+    overflow: hidden;
+}
 
 #images-section .media-box {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: auto;
+    aspect-ratio: auto;
+    background: transparent;
     overflow: hidden;
-    background: #000;
 }
 
+/* ORIGINAL IMAGE SIZE / RATIO */
+
 #images-section .media-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
+/* DESIGN IMAGE HOVER */
+
 #images-section .media-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
-/* PROJECT TITLES */
+/* =========================
+   PROJECT TITLES
+========================= */
 
 .project-title {
     padding: 12px 10px;
@@ -354,7 +416,15 @@ section h2 {
     align-items: center;
 }
 
-/* OPTIONAL PORTFOLIO GRID */
+#images-section .project-title {
+    padding: 12px;
+    text-align: center;
+    background: #1e293b;
+}
+
+/* =========================
+   OPTIONAL PORTFOLIO GRID
+========================= */
 
 .portfolio-grid {
     display: flex;
@@ -375,20 +445,31 @@ section h2 {
 
 .portfolio-item.design .media-box {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #000;
+    height: auto;
+    aspect-ratio: auto;
+    background: transparent;
 }
 
 .portfolio-item .media-box img,
 .portfolio-item .media-box video,
 .portfolio-item .media-box iframe {
     width: 100%;
-    height: 100%;
     display: block;
-    object-fit: cover;
 }
 
-/* FADE IN ANIMATION */
+.portfolio-item .media-box img {
+    height: auto;
+    object-fit: contain;
+}
+
+.portfolio-item.video .media-box video,
+.portfolio-item.video .media-box iframe {
+    height: 100%;
+}
+
+/* =========================
+   FADE-IN ANIMATION
+========================= */
 
 @keyframes fadeInUp {
     from {
@@ -402,7 +483,9 @@ section h2 {
     }
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT SECTION
+========================= */
 
 .contact-info {
     margin-top: 20px;
@@ -418,7 +501,9 @@ section h2 {
     margin-right: 8px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -429,10 +514,14 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* TABLET */
+/* =========================
+   TABLET RESPONSIVE
+========================= */
 
 @media (max-width: 900px) {
-    .media-grid {
+
+    .media-grid,
+    #images-section .media-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -451,9 +540,12 @@ footer {
     }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
 @media (max-width: 600px) {
+
     header {
         flex-direction: column;
         gap: 10px;
@@ -486,7 +578,8 @@ footer {
         font-size: 2rem;
     }
 
-    .media-grid {
+    .media-grid,
+    #images-section .media-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -515,7 +608,12 @@ footer {
     }
 }
 
+/* =========================
+   REDUCED MOTION
+========================= */
+
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
