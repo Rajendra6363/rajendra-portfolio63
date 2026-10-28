@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +26,8 @@ body {
         background-position: 0% 50%;
     }
 }
+
+/* HEADER */
 
 header {
     display: flex;
@@ -57,7 +60,10 @@ nav a:hover {
     color: #38bdf8;
 }
 
-.hero {
+/* HERO SECTION */
+
+.hero,
+.about {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -82,7 +88,7 @@ nav a:hover {
     text-align: center;
     width: 100%;
     flex: 1;
-    min-width: 280px;
+    min-width: 0;
 }
 
 .hero-content p {
@@ -93,7 +99,8 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* Hero Image with Glowing Animation */
+/* HERO IMAGE */
+
 .hero-image img {
     width: 260px;
     height: 260px;
@@ -108,15 +115,17 @@ nav a:hover {
 @keyframes floatAndGlow {
     0% {
         transform: translateY(0px);
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.2);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
     }
+
     50% {
         transform: translateY(-10px);
-        box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), inset 0 0 25px rgba(56, 189, 248, 0.4);
+        box-shadow: 0 0 35px rgba(56, 189, 248, 0.8);
     }
+
     100% {
         transform: translateY(0px);
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.2);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
     }
 }
 
@@ -129,7 +138,8 @@ nav a:hover {
     font-weight: 600;
 }
 
-.hero h1 {
+.hero h1,
+.hero-content h1 {
     font-size: 3rem;
     margin: 20px 0;
     font-weight: 700;
@@ -139,18 +149,26 @@ nav a:hover {
     color: #38bdf8;
 }
 
+/* BUTTONS */
+
 .hero-buttons .btn {
     padding: 12px 25px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    margin-right: 15px;
+    margin: 5px 10px;
     display: inline-block;
 }
 
 .btn.primary {
     background: #38bdf8;
     color: #0f1016;
+    transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
 }
 
 .btn.secondary {
@@ -158,15 +176,11 @@ nav a:hover {
     color: #f1f5f9;
 }
 
-.skill-card img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
+/* SECTIONS */
 
 section {
     padding: 80px 4% 60px;
+    scroll-margin-top: 75px;
 }
 
 section h2 {
@@ -177,16 +191,50 @@ section h2 {
 
 .about p {
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     text-align: center;
     color: #94a3b8;
 }
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.skill-card {
+    background: #1e293b;
+    border-radius: 10px;
+    padding: 25px 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* FILTER BUTTONS */
 
 .filter-buttons {
     display: flex;
     justify-content: center;
     margin: 20px 0 30px;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
@@ -197,15 +245,17 @@ section h2 {
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background: #38bdf8;
     color: #0f1016;
 }
 
-/* Portfolio & Separate Sections Layout (Chinna Cards Pakka-Pakkaga Ravataniki) */
+/* PORTFOLIO SECTION */
+
 .portfolio-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -219,7 +269,93 @@ section h2 {
     font-size: 0.95rem;
 }
 
-/* Ikkada grid columns ni chinna size (220px) lo set chesam, so row ki 3 or 4 ostayi */
+/* MAIN MEDIA GRID - FIXED */
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    align-items: start;
+}
+
+/* VIDEO AND DESIGN CARDS */
+
+.media-card,
+.portfolio-item {
+    width: 100%;
+    min-width: 0;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeInUp 0.6s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover,
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* VIDEO BOX - 16:9 */
+
+#videos-section .media-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+}
+
+/* YOUTUBE VIDEO FIX */
+
+#videos-section .media-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* DESIGN IMAGES */
+
+#images-section .media-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #000;
+}
+
+#images-section .media-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+#images-section .media-card:hover img {
+    transform: scale(1.05);
+}
+
+/* PROJECT TITLES */
+
+.project-title {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    text-align: center;
+    background: #1e293b;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* OPTIONAL PORTFOLIO GRID */
+
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;
@@ -227,50 +363,47 @@ section h2 {
     justify-content: center;
 }
 
-
-.portfolio-item {
-    width: 240px !important;
-    background: #1e293b;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.portfolio-grid .portfolio-item {
+    width: 240px;
 }
 
-.portfolio-item:hover {
-    transform: translateY(-5px);
-}
-
-/* Videos: Strict 16:9 Ratio */
 .portfolio-item.video .media-box {
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
 }
 
-/* Designs: Strict Height limit so images won't stretch full screen */
 .portfolio-item.design .media-box {
-    width: 50%;
-    height: 50px; /* Ikkada height 160px fix chesam, anduke chinna ga vastundi */
+    width: 100%;
+    aspect-ratio: 4 / 3;
     background: #000;
 }
 
-.media-box img, .media-box video {
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
+.portfolio-item .media-box img,
+.portfolio-item .media-box video,
+.portfolio-item .media-box iframe {
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
-.project-title {
-    padding: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #f1f5f9;
-    text-align: center;
-    background: #1e293b;
+/* FADE IN ANIMATION */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Contact & Footer */
+/* CONTACT */
+
 .contact-info {
     margin-top: 20px;
     display: flex;
@@ -285,6 +418,8 @@ section h2 {
     margin-right: 8px;
 }
 
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 30px;
@@ -294,65 +429,98 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive Breakpoints */
+/* TABLET */
+
 @media (max-width: 900px) {
+    .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .hero-container {
         text-align: center;
         flex-direction: column-reverse;
         gap: 30px;
     }
+
+    header {
+        padding: 15px 4%;
+    }
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 0.8rem;
+    }
+
+    .hero,
+    .about {
+        padding: 160px 5% 60px;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .portfolio-section {
+        padding: 50px 15px;
+    }
+
+    .portfolio-grid .portfolio-item {
+        width: 100%;
+    }
+
+    .project-title {
+        font-size: 0.8rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 }
-/* 1. Smooth Fade-In Animation for Cards */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.portfolio-item {
-    animation: fadeInUp 0.6s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 2. Hover Effect: Card Lift & Glow */
-.portfolio-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
-    border-color: rgba(56, 189, 248, 0.4);
-}
-
-/* 3. Image Zoom Effect on Hover inside Cards */
-.media-box img, .media-box video {
-    transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover .media-box img, 
-.portfolio-item:hover .media-box video {
-    transform: scale(1.05);
-}
-
-/* 4. Button Glow & Scale Animation */
-.btn.primary {
-    transition: all 0.3s ease;
-}
-
-.btn.primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
-}
-
-/* 5. Filter Buttons Smooth Transition */
-.filter-btn {
-    transition: all 0.3s ease;
 }
