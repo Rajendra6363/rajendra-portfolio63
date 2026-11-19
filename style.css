@@ -428,20 +428,24 @@ h2 {
     display: block;
 }
 
-#images-section .media-box.image-box {
+/* NATURAL IMAGE SIZE FOR DESIGN WORKS */
+#images-section .media-box {
+    aspect-ratio: auto !important;
+    height: auto !important;
     width: 100%;
-    height: auto;
-    aspect-ratio: auto;
     background: #0d1017;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: visible;
 }
 
-#images-section .media-box.image-box img {
+#images-section .media-box img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: initial !important;
     display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    object-fit: initial;
 }
 
 .card-info {
