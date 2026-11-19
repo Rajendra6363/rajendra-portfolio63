@@ -545,3 +545,19 @@ footer {
     max-height: 520px;
     margin: 0 auto;
 }
+/* NATURAL PROPORTIONS FITTING CLEANLY INSIDE EACH CARD */
+#images-section .media-box {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    width: 100%;
+    background: #0d1017;
+    overflow: hidden;
+}
+
+#images-section .media-box img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block;
+}
