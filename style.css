@@ -394,7 +394,7 @@ h2 {
 ========================= */
 .media-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.8rem;
     align-items: start;
 }
@@ -435,7 +435,8 @@ h2 {
 }
 
 /* DESIGN WORKS: NATURAL ASPECT RATIO INSIDE CARD */
-#images-section .media-box {
+#images-section .media-box,
+#images-section .media-box.image-box {
     display: block;
     position: static;
     width: 100%;
@@ -445,7 +446,8 @@ h2 {
     overflow: hidden;
 }
 
-#images-section .media-box img {
+#images-section .media-box img,
+#images-section .media-box.image-box img {
     display: block;
     width: 100%;
     height: auto;
@@ -524,6 +526,12 @@ footer {
     margin-top: 2rem;
 }
 
+@media (max-width: 900px) {
+    .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -543,5 +551,8 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.3rem;
+    }
+    .media-grid {
+        grid-template-columns: 1fr;
     }
 }
