@@ -540,3 +540,8 @@ footer {
         font-size: 2.3rem;
     }
 }
+.media-box.vertical-box {
+    aspect-ratio: 9 / 16;
+    max-height: 520px;
+    margin: 0 auto;
+}
