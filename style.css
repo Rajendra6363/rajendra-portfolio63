@@ -396,6 +396,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.8rem;
+    align-items: start;
 }
 
 .media-card {
@@ -427,19 +428,20 @@ h2 {
     display: block;
 }
 
-.media-box.image-box {
-    aspect-ratio: auto;
-    background: #0d1017;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.media-box.image-box img {
+#images-section .media-box.image-box {
     width: 100%;
     height: auto;
-    object-fit: contain;
+    aspect-ratio: auto;
+    background: #0d1017;
+    overflow: visible;
+}
+
+#images-section .media-box.image-box img {
     display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: initial;
 }
 
 .card-info {
