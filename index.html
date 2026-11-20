@@ -12,9 +12,6 @@
 
 <body>
 
-    <!-- CONTINUOUS FALLING PARTICLES BACKGROUND -->
-    <canvas id="particle-canvas"></canvas>
-
     <!-- =========================
          HEADER / NAVBAR
     ========================= -->
@@ -129,7 +126,7 @@
                         <i class="fa-solid fa-folder"></i>
                         <i class="fa-solid fa-microphone-lines badge-icon"></i>
                     </div>
-                    <span class="file-count">4 Videos</span>
+                    <span class="file-count">3 Video</span>
                 </div>
                 <h3>Podcast Editing</h3>
                 <p>Short-form podcast cuts, motion graphics overlays, and storytelling edits.</p>
@@ -157,7 +154,7 @@
                         <i class="fa-solid fa-folder"></i>
                         <i class="fa-solid fa-music badge-icon"></i>
                     </div>
-                    <span class="file-count">2 Videos</span>
+                    <span class="file-count">2 Video</span>
                 </div>
                 <h3>Lyrical Song Editing</h3>
                 <p>Kinetic typography, beat-synced transitions, and creative lyric videos.</p>
@@ -171,7 +168,7 @@
                         <i class="fa-solid fa-folder"></i>
                         <i class="fa-solid fa-bullhorn badge-icon"></i>
                     </div>
-                    <span class="file-count">2 Videos</span>
+                    <span class="file-count">2 Video</span>
                 </div>
                 <h3>Political Reels Editing</h3>
                 <p>High-impact political reels, mass elevations, and dynamic mashup cuts.</p>
@@ -199,7 +196,7 @@
             <!-- VIDEOS INSIDE THE FOLDER -->
             <div class="media-grid">
 
-                <!-- PODCAST VIDEO 1 -->
+               <!-- PODCAST VIDEO 1 -->
                 <div class="media-card video-item" data-folder="podcast">
                     <div class="media-box">
                         <iframe
@@ -295,6 +292,7 @@
                     </div>
                 </div>
 
+                
                 <!-- LYRICAL SONG VIDEO 1 -->
                 <div class="media-card video-item" data-folder="lyrical">
                     <div class="media-box">
@@ -327,7 +325,8 @@
                     </div>
                 </div>
 
-                <!-- POLITICAL REEL VIDEO 1 (SHORT) -->
+                <!-- POLITICAL REEL VIDEO -->
+                <!-- POLITICAL REEL VIDEO 2 (SHORT) -->
                 <div class="media-card video-item" data-folder="political">
                     <div class="media-box vertical-box">
                         <iframe
@@ -343,7 +342,7 @@
                     </div>
                 </div>
 
-                <!-- POLITICAL REEL VIDEO 2 (SHORT) -->
+                <!-- POLITICAL REEL VIDEO 3 (SHORT) -->
                 <div class="media-card video-item" data-folder="political">
                     <div class="media-box vertical-box">
                         <iframe
@@ -426,7 +425,6 @@
         </div>
     </section>
 
-
     <!-- =========================
          CONTACT SECTION
     ========================= -->
@@ -462,6 +460,72 @@
         <p>&copy; 2026 Mallavalli Dola Rajendra. All Rights Reserved.</p>
     </footer>
 
+    <canvas id="particle-canvas"></canvas>
+    <script>
+        (() => {
+            const canvas = document.getElementById("particle-canvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+
+            let particles = [];
+            const particleCount = 85;
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener("resize", resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.reset(true);
+                }
+
+                reset(initial = false) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = initial ? Math.random() * canvas.height : -10;
+                    this.size = Math.random() * 2.5 + 1;
+                    this.speedY = Math.random() * 1.3 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.opacity = Math.random() * 0.55 + 0.2;
+                }
+
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+
+                    if (this.y > canvas.height + 10) {
+                        this.reset(false);
+                    }
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.x < 0) this.x = canvas.width;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(139, 92, 246, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animateParticles);
+            }
+
+            animateParticles();
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
